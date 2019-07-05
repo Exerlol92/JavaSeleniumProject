@@ -18,58 +18,31 @@ public class MainClass {
 	public static void main(String[] args) {
 		WebDriver driver = new ChromeDriver();
 		driver.get(RegistrationObjects.URL);
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		Scanner sc = new Scanner(System.in);
-		// Automatski registrujemo sve podatke iz Excel fajla
-		/*try {
+
+		try {
+			// Automatski registrujemo sve podatke iz Excel fajla
 			RegistrationTest.AutomaticTestAll(driver);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		// Manualno registrovanje korisnika
-		try {
+			// Manualno registrovanje korisnika
 			RegistrationTest.ManualFill(driver);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		// Automatski proveravamo da li smo uspesno registrovali sve podatke, login/logout metodom
-		try {
+			// Automatski proveravamo da li smo uspesno registrovali sve podatke,
+			// login/logout metodom
 			LoginTest.AutomaticTestAll(driver);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}*/
-		// Manualno logovanje preko konzole
-		try {
+			// Manualno logovanje preko konzole
 			LoginTest.ManualFill(driver);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		// Automatsko objavljivnanje svih postova iz Excel fajla
-		try {
+			// Automatsko objavljivnanje svih postova iz Excel fajla
 			PostTest.AutomaticPostAll(driver);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		// Manualno kreiranje objava
-		try {
+			// Manualno kreiranje objava
 			PostTest.ManualFill(driver);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		// Brisanje poslednja dva posta
-		try {
+			// Brisanje poslednja dva posta
 			DeleteTest.AutomaticDelete(driver);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		// Manualno editovanje posta
-		try {
+			// Manualno editovanje posta
 			EditTest.ManualFill(driver);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 
 }
